@@ -7,6 +7,7 @@ import { TranscriptSidebar } from "@/components/ui/transcript-sidebar";
 
 export default function Index() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [transcriptCollapsed, setTranscriptCollapsed] = useState(true);
   return (
     <div className="min-h-screen bg-gray-100 p-2 lg:p-4">
       <BrowserMockup>
