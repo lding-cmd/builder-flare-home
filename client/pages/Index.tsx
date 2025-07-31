@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserMockup } from "@/components/ui/browser-mockup";
 import { MainLayout } from "@/components/ui/main-layout";
 import { AppointmentSidebar } from "@/components/ui/appointment-sidebar";
@@ -5,6 +6,7 @@ import { PatientContent } from "@/components/ui/patient-content";
 import { TranscriptSidebar } from "@/components/ui/transcript-sidebar";
 
 export default function Index() {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   return (
     <div className="min-h-screen bg-gray-100 p-2 lg:p-4">
       <BrowserMockup>
