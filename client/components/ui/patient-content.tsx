@@ -784,5 +784,6 @@ export function PatientContent() {
         </div>
       </div>
     </div>
+  )
   );
 }
