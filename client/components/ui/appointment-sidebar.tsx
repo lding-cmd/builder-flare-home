@@ -96,11 +96,24 @@ export function AppointmentSidebar({ collapsed = false, onToggleCollapse }: Appo
   ];
 
   if (collapsed) {
-    return null;
+    return (
+      <div className="w-[72px] h-full bg-core-slate-0 border-r border-core-slate-50 p-6 flex flex-col items-start gap-6">
+        <button
+          onClick={onToggleCollapse}
+          className="p-1 hover:bg-gray-100 rounded transition-colors"
+          aria-label="Expand sidebar"
+        >
+          <svg className="w-5 h-5 text-core-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <Calendar className="w-5 h-5 text-core-slate-900" />
+      </div>
+    );
   }
 
   return (
-    <div className="w-full h-full bg-core-slate-0 xl:border-r border-core-slate-50 p-4 xl:p-6 space-y-4 xl:space-y-6 overflow-y-auto">
+    <div className="w-full h-full bg-core-slate-0 border-r border-core-slate-50 p-4 xl:p-6 space-y-4 xl:space-y-6 overflow-y-auto">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
