@@ -5,7 +5,7 @@ export function PatientContent() {
   return (
     <div className="flex-1 flex flex-col bg-white">
       {/* Patient Info Header */}
-      <div className="px-6 py-9 bg-white border-b border-core-slate-50">
+      <div className="px-4 lg:px-6 py-6 lg:py-9 bg-white border-b border-core-slate-50">
         <div className="max-w-[750px] mx-auto space-y-1">
           <h1 className="font-monument text-2xl font-medium text-black">
             Martinez, Roberto
@@ -17,20 +17,20 @@ export function PatientContent() {
       </div>
 
       {/* Artifact Label */}
-      <div className="px-6 py-3 bg-neutral-beige-50 border-b border-core-slate-50">
-        <div className="max-w-[750px] mx-auto flex justify-between items-center">
+      <div className="px-4 lg:px-6 py-3 bg-neutral-beige-50 border-b border-core-slate-50">
+        <div className="max-w-[750px] mx-auto flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-center">
           <div className="flex items-center gap-2">
             <FileText className="w-5 h-5 text-black" />
             <span className="font-monument text-base font-medium text-black">Note</span>
           </div>
-          <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="h-9 px-4 gap-2 border-neutral-beige-100">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <Button variant="outline" size="sm" className="h-9 px-3 sm:px-4 gap-2 border-neutral-beige-100 text-xs sm:text-sm">
               <MessageCircleWarning className="w-4 h-4" />
-              Share feedback
+              <span className="hidden sm:inline">Share feedback</span>
             </Button>
-            <Button variant="outline" size="sm" className="h-9 px-4 gap-2 border-neutral-beige-100">
+            <Button variant="outline" size="sm" className="h-9 px-3 sm:px-4 gap-2 border-neutral-beige-100 text-xs sm:text-sm">
               <Copy className="w-4 h-4" />
-              Copy text
+              <span className="hidden sm:inline">Copy text</span>
             </Button>
             <Button variant="outline" size="sm" className="h-9 w-9 p-0 border-neutral-beige-100">
               <MoreVertical className="w-4 h-4" />
@@ -40,8 +40,8 @@ export function PatientContent() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 px-6 py-9 bg-white overflow-y-auto">
-        <div className="max-w-[750px] mx-auto space-y-9">
+      <div className="flex-1 px-4 lg:px-6 py-6 lg:py-9 bg-white overflow-y-auto">
+        <div className="max-w-[750px] mx-auto space-y-6 lg:space-y-9">
           {/* Subjective Section */}
           <div className="space-y-6">
             <h2 className="font-monument text-xl font-medium text-black">
