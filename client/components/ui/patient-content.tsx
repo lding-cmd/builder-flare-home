@@ -1,438 +1,346 @@
+import {
+  FileText,
+  MessageCircleWarning,
+  Copy,
+  MoreVertical,
+} from "lucide-react";
+import { Button } from "./button";
+
 export function PatientContent() {
   return (
-    <div className="h-full bg-white overflow-y-auto">
-      <div className="p-6 space-y-6">
-        {/* Header */}
-        <div className="border-b border-gray-200 pb-4">
-          <h1 className="text-2xl font-monument font-bold text-black">
-            Martinez, Roberto - Progress Note
+    <div className="flex-1 flex flex-col bg-white">
+      {/* Patient Info Header */}
+      <div className="px-4 lg:px-6 py-6 lg:py-9 bg-white border-b border-core-slate-50">
+        <div className="max-w-[750px] mx-auto space-y-1">
+          <h1 className="font-monument text-2xl font-medium text-black">
+            Martinez, Roberto
           </h1>
-          <p className="text-sm font-monument text-gray-600 mt-1">
-            DOB: 03/15/1968 | MRN: 12345678 | Date: June 7, 2025
+          <p className="font-monument text-base text-black">
+            Male | DOB: 5/23/1975 | MRN: 76429315 | New Consult
           </p>
         </div>
+      </div>
 
-        {/* Chief Complaint */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Chief Complaint
-          </h2>
-          <p className="text-base font-monument text-gray-800 leading-relaxed">
-            "I'm here for my follow-up appointment. The headaches are still bothering me, and I'm feeling more tired than usual."
-          </p>
+      {/* Artifact Label */}
+      <div className="px-4 lg:px-6 py-3 bg-neutral-beige-50 border-b border-core-slate-50">
+        <div className="max-w-[750px] mx-auto flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-center">
+          <div className="flex items-center gap-2">
+            <FileText className="w-5 h-5 text-black" />
+            <span className="font-monument text-base font-medium text-black">
+              Note
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 px-3 sm:px-4 gap-2 border-neutral-beige-100 text-xs sm:text-sm"
+            >
+              <MessageCircleWarning className="w-4 h-4" />
+              <span className="hidden sm:inline">Share feedback</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 px-3 sm:px-4 gap-2 border-neutral-beige-100 text-xs sm:text-sm"
+            >
+              <Copy className="w-4 h-4" />
+              <span className="hidden sm:inline">Copy text</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 w-9 p-0 border-neutral-beige-100"
+            >
+              <MoreVertical className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
+      </div>
 
-        {/* History of Present Illness */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            History of Present Illness
-          </h2>
-          <div className="space-y-3 text-base font-monument text-gray-800 leading-relaxed">
-            <p>
-              Mr. Martinez is a 57-year-old male with a history of stage IIA adenocarcinoma of the lung (T1bN1M0) diagnosed 8 months ago, currently receiving adjuvant chemotherapy. He presents today for routine follow-up during his treatment course.
+      {/* Content */}
+      <div className="flex-1 px-4 lg:px-6 py-6 lg:py-9 bg-white overflow-y-auto">
+        <div className="max-w-[750px] mx-auto space-y-6 lg:space-y-9">
+          {/* Subjective Section */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Subjective
+            </h2>
+            <p className="font-monument text-base text-black leading-[22px]">
+              50-year-old male with stage IIA adenocarcinoma of the lung
+              (diagnosed February 2025) presents for consult after completing
+              his first cycle of adjuvant chemotherapy (carboplatin/paclitaxel).
+              Patient reports mild to moderate fatigue (4/10) that is manageable
+              and improving compared to immediately post-treatment. He denies
+              shortness of breath, chest pain, or hemoptysis. Patient notes some
+              hair thinning but no complete alopecia. He reports intermittent
+              mild nausea (2/10) that responds well to ondansetron. Patient
+              mentions occasional tingling in his fingertips (1/10) that doesn't
+              interfere with daily activities like writing or using tools. Sleep
+              has been good with no night sweats. Appetite remains strong with
+              stable weight. He continues to abstain from smoking since
+              diagnosis and reports good adherence to prescribed medications.
             </p>
-            <p>
-              Patient reports persistent headaches occurring 3-4 times per week, described as bilateral, throbbing, moderate intensity (6/10), lasting 4-6 hours. Headaches are partially relieved with acetaminophen but have been increasing in frequency over the past month. No associated visual changes, nausea, or photophobia. Patient notes headaches seem worse with stress and lack of sleep.
-            </p>
-            <p>
-              He continues to experience fatigue, rating it 7/10 on most days. Fatigue is worse in the afternoons and impacts his ability to perform usual activities. Sleep pattern shows difficulty falling asleep and frequent awakening. Appetite has decreased slightly but maintains adequate oral intake.
-            </p>
-            <p>
-              Patient completed cycle 3 of adjuvant carboplatin/paclitaxel 2 weeks ago. Reports mild nausea controlled with ondansetron, and mild peripheral neuropathy in fingertips (grade 1). No fever, chills, or signs of infection. Last CBC showed mild neutropenia (ANC 1200).
-            </p>
           </div>
-        </div>
 
-        {/* Past Medical History */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Past Medical History
-          </h2>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <h3 className="font-monument font-medium text-red-800 mb-2">Oncologic History</h3>
-            <ul className="space-y-1 text-sm font-monument text-red-700">
-              <li>• Stage IIA Adenocarcinoma, Left Upper Lobe (T1bN1M0) - Diagnosed October 2024</li>
-              <li>• Left upper lobectomy with mediastinal lymph node dissection - November 2024</li>
-              <li>• Currently on adjuvant carboplatin/paclitaxel (cycle 3 of 4 completed)</li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="font-monument font-medium text-gray-800">Other Medical History</h3>
-            <ul className="space-y-1 text-base font-monument text-gray-700">
-              <li>• Hypertension (2019) - well controlled on amlodipine</li>
-              <li>• Iron deficiency anemia (2024) - likely related to chemotherapy</li>
-              <li>• Gastroesophageal reflux disease (2020)</li>
-              <li>• Hyperlipidemia (2021)</li>
-              <li>• Former tobacco use disorder - quit 10 months ago</li>
-            </ul>
-          </div>
-        </div>
+          {/* Objective Section */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Objective
+            </h2>
+            <div className="font-monument text-base text-black leading-[22px] whitespace-pre-line">
+              {`Vitals: BP 132/84, HR 78, RR 18, Temp 98.4°F, O2 sat 96% on RA, Weight 168 lbs (stable from baseline)
 
-        {/* Surgical History */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Surgical History
-          </h2>
-          <ul className="space-y-2 text-base font-monument text-gray-700">
-            <li>• Left upper lobectomy with mediastinal lymph node dissection (11/15/2024)</li>
-            <li>• Port-a-cath placement (11/28/2024)</li>
-            <li>• Appendectomy (1995)</li>
-            <li>• Tonsillectomy (childhood)</li>
-          </ul>
-        </div>
+Physical Examination:
 
-        {/* Allergies */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Allergies
-          </h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-            <ul className="space-y-1 text-base font-monument text-yellow-800">
-              <li>• Penicillin - rash, hives</li>
-              <li>• Sulfa drugs - GI upset</li>
-              <li>• Environmental: pollen, dust mites</li>
-              <li>• NKDA to contrast agents</li>
-            </ul>
-          </div>
-        </div>
+General: Well-appearing, alert and oriented, in no acute distress
+HEENT: Mucous membranes moist, no oral ulcerations, mild hair thinning noted
+Cardiovascular: Regular rate and rhythm, no murmurs, rubs, or gallops
+Respiratory: Clear to auscultation bilaterally, no wheezes, rhonchi, or crackles, good air movement
+Abdomen: Soft, non-tender, non-distended, normal bowel sounds
+Extremities: No edema, no clubbing, sensation intact to light touch
+Skin: No rash, mild palmar erythema
+Neurological: Alert and oriented x3, cranial nerves II-XII intact, 5/5 strength throughout, minimal decreased sensation to vibration in fingertips bilaterally
+Lymph nodes: No palpable cervical, supraclavicular, or axillary lymphadenopathy
 
-        {/* Review of Systems */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Review of Systems
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">Constitutional</h3>
-              <p className="text-sm font-monument text-gray-700">Fatigue, mild weight loss (5 lbs over 2 months), no fever or chills</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">HEENT</h3>
-              <p className="text-sm font-monument text-gray-700">Headaches as described, no vision changes, no hearing loss</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">Cardiovascular</h3>
-              <p className="text-sm font-monument text-gray-700">No chest pain, palpitations, or shortness of breath</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">Respiratory</h3>
-              <p className="text-sm font-monument text-gray-700">Mild occasional cough, no dyspnea at rest</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">Gastrointestinal</h3>
-              <p className="text-sm font-monument text-gray-700">Mild nausea controlled with medication, no vomiting or diarrhea</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-monument font-medium text-gray-800">Neurological</h3>
-              <p className="text-sm font-monument text-gray-700">Mild peripheral neuropathy in fingertips, no weakness or balance issues</p>
+Laboratory Results (May 13, 2025):
+
+WBC: 4.8 K/μL
+Hgb: 12.1 g/dL
+Plt: 178 K/μL
+ANC: 2.9 K/μL
+AST/ALT: 34/28 U/L
+Creatinine: 1.0 mg/dL
+BUN: 18 mg/dL
+Tumor markers: CEA: 2.8 ng/mL (within normal limits)`}
             </div>
           </div>
-        </div>
 
-        {/* Objective */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Objective
-          </h2>
-          
-          {/* Vital Signs */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="font-monument font-medium text-blue-800 mb-3">Vital Signs</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-monument">
+          {/* Assessment & Plan */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Assessment & Plan
+            </h2>
+            <div className="space-y-8">
               <div>
-                <span className="text-blue-700 font-medium">BP:</span>
-                <span className="text-blue-800 ml-1">142/88 mmHg</span>
+                <h3 className="font-monument text-lg font-medium text-black mb-4">
+                  1. Stage IIA Adenocarcinoma of the Lung - T1N1M0
+                </h3>
+                <div className="font-monument text-base text-black leading-[22px] space-y-4">
+                  <p>
+                    Patient is tolerating first cycle of adjuvant chemotherapy well with expected mild side effects. Current regimen of carboplatin/paclitaxel is appropriate for his staging and performance status.
+                  </p>
+                  <p className="font-medium">Plan:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Continue current chemotherapy regimen - carboplatin AUC 6 and paclitaxel 200 mg/m² every 3 weeks</li>
+                    <li>Cycle 2 scheduled for May 27, 2025</li>
+                    <li>Pre-medication with dexamethasone, diphenhydramine, and H2 blocker to prevent hypersensitivity reactions</li>
+                    <li>Monitor CBC with differential before each cycle</li>
+                    <li>Comprehensive metabolic panel before each cycle</li>
+                    <li>Plan for 4 total cycles of adjuvant therapy</li>
+                    <li>Restaging CT chest/abdomen/pelvis after completion of chemotherapy</li>
+                  </ul>
+                </div>
               </div>
+
               <div>
-                <span className="text-blue-700 font-medium">HR:</span>
-                <span className="text-blue-800 ml-1">78 bpm</span>
+                <h3 className="font-monument text-lg font-medium text-black mb-4">
+                  2. Chemotherapy-Related Fatigue
+                </h3>
+                <div className="font-monument text-base text-black leading-[22px] space-y-4">
+                  <p>
+                    Mild to moderate fatigue is expected with current regimen. Patient reports manageable symptoms that are improving between cycles.
+                  </p>
+                  <p className="font-medium">Plan:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Continue current activity level as tolerated</li>
+                    <li>Encourage light exercise such as walking 20-30 minutes daily</li>
+                    <li>Adequate rest and sleep hygiene</li>
+                    <li>Monitor hemoglobin levels - currently stable at 12.1 g/dL</li>
+                    <li>Consider erythropoiesis-stimulating agents if Hgb drops below 10 g/dL</li>
+                  </ul>
+                </div>
               </div>
+
               <div>
-                <span className="text-blue-700 font-medium">Temp:</span>
-                <span className="text-blue-800 ml-1">98.6°F</span>
+                <h3 className="font-monument text-lg font-medium text-black mb-4">
+                  3. Peripheral Neuropathy (Grade 1)
+                </h3>
+                <div className="font-monument text-base text-black leading-[22px] space-y-4">
+                  <p>
+                    Minimal sensory neuropathy in fingertips consistent with paclitaxel-induced peripheral neuropathy. Currently Grade 1 and not interfering with activities of daily living.
+                  </p>
+                  <p className="font-medium">Plan:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Monitor closely with each visit using neuropathy assessment scale</li>
+                    <li>Patient education on neuropathy precautions</li>
+                    <li>Consider dose reduction if progresses to Grade 2 or higher</li>
+                    <li>Gabapentin 300mg TID if symptoms worsen</li>
+                    <li>Occupational therapy referral if functional impairment develops</li>
+                  </ul>
+                </div>
               </div>
+
               <div>
-                <span className="text-blue-700 font-medium">O2 Sat:</span>
-                <span className="text-blue-800 ml-1">97% RA</span>
+                <h3 className="font-monument text-lg font-medium text-black mb-4">
+                  4. Nausea (Well-Controlled)
+                </h3>
+                <div className="font-monument text-base text-black leading-[22px] space-y-4">
+                  <p>
+                    Minimal nausea well-controlled with current antiemetic regimen. Patient reports good oral intake and stable weight.
+                  </p>
+                  <p className="font-medium">Plan:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Continue ondansetron 8mg PO q8h PRN nausea</li>
+                    <li>Add prochlorperazine 10mg PO q6h PRN for breakthrough nausea</li>
+                    <li>Dietary counseling - small frequent meals, avoid strong odors</li>
+                    <li>Monitor weight and nutritional status</li>
+                  </ul>
+                </div>
               </div>
+
               <div>
-                <span className="text-blue-700 font-medium">Weight:</span>
-                <span className="text-blue-800 ml-1">165 lbs</span>
-              </div>
-              <div>
-                <span className="text-blue-700 font-medium">Height:</span>
-                <span className="text-blue-800 ml-1">5'8"</span>
-              </div>
-              <div>
-                <span className="text-blue-700 font-medium">BMI:</span>
-                <span className="text-blue-800 ml-1">25.1</span>
-              </div>
-              <div>
-                <span className="text-blue-700 font-medium">ECOG:</span>
-                <span className="text-blue-800 ml-1">1</span>
+                <h3 className="font-monument text-lg font-medium text-black mb-4">
+                  5. Tobacco Cessation (Maintained)
+                </h3>
+                <div className="font-monument text-base text-black leading-[22px] space-y-4">
+                  <p>
+                    Patient continues to maintain tobacco cessation since diagnosis. This is crucial for treatment efficacy and overall prognosis.
+                  </p>
+                  <p className="font-medium">Plan:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Congratulate patient on continued abstinence</li>
+                    <li>Continue behavioral support and counseling</li>
+                    <li>Nicotine replacement therapy available if needed</li>
+                    <li>Refer to tobacco cessation program if cravings increase</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Physical Exam */}
-          <div className="space-y-3">
-            <h3 className="font-monument font-medium text-gray-800">Physical Examination</h3>
-            <div className="space-y-3 text-base font-monument text-gray-700">
-              <p><strong>General:</strong> Alert, oriented x3, appears mildly fatigued but in no acute distress</p>
-              <p><strong>HEENT:</strong> PERRL, EOMI, no papilledema, oropharynx clear</p>
-              <p><strong>Neck:</strong> Supple, no lymphadenopathy, no JVD</p>
-              <p><strong>Cardiovascular:</strong> RRR, no murmurs, rubs, or gallops</p>
-              <p><strong>Pulmonary:</strong> Clear to auscultation bilaterally, well-healed thoracotomy scar</p>
-              <p><strong>Abdomen:</strong> Soft, non-tender, non-distended, normal bowel sounds</p>
-              <p><strong>Extremities:</strong> No edema, mild decreased sensation to light touch in fingertips bilaterally</p>
-              <p><strong>Neurological:</strong> CN II-XII intact, strength 5/5 throughout, reflexes 2+ symmetric</p>
-              <p><strong>Port:</strong> Right chest port site clean, dry, intact, no erythema or tenderness</p>
-            </div>
-          </div>
-
-          {/* Lab Results */}
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <h3 className="font-monument font-medium text-green-800 mb-3">Recent Laboratory Results (6/5/2025)</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-monument">
-              <div className="space-y-1">
-                <p><span className="text-green-700 font-medium">WBC:</span> <span className="text-green-800">3.8 K/uL</span> <span className="text-red-600">(L)</span></p>
-                <p><span className="text-green-700 font-medium">ANC:</span> <span className="text-green-800">1.2 K/uL</span> <span className="text-red-600">(L)</span></p>
-                <p><span className="text-green-700 font-medium">Hgb:</span> <span className="text-green-800">10.2 g/dL</span> <span className="text-red-600">(L)</span></p>
-                <p><span className="text-green-700 font-medium">Hct:</span> <span className="text-green-800">30.8%</span> <span className="text-red-600">(L)</span></p>
-                <p><span className="text-green-700 font-medium">Platelets:</span> <span className="text-green-800">185 K/uL</span></p>
-              </div>
-              <div className="space-y-1">
-                <p><span className="text-green-700 font-medium">Creatinine:</span> <span className="text-green-800">0.9 mg/dL</span></p>
-                <p><span className="text-green-700 font-medium">BUN:</span> <span className="text-green-800">18 mg/dL</span></p>
-                <p><span className="text-green-700 font-medium">ALT:</span> <span className="text-green-800">28 U/L</span></p>
-                <p><span className="text-green-700 font-medium">AST:</span> <span className="text-green-800">32 U/L</span></p>
-                <p><span className="text-green-700 font-medium">Total Bili:</span> <span className="text-green-800">0.8 mg/dL</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Assessment and Plan */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Assessment and Plan
-          </h2>
-          
-          <div className="space-y-4">
-            {/* Problem 1 */}
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">
-                1. Stage IIA Adenocarcinoma of Left Upper Lobe - On adjuvant chemotherapy
-              </h3>
-              <p className="text-sm font-monument text-gray-700 mb-2">
-                Patient is tolerating adjuvant carboplatin/paclitaxel reasonably well. Completed 3 of 4 planned cycles.
+          {/* Family History */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Family History
+            </h2>
+            <div className="font-monument text-base text-black leading-[22px]">
+              <p className="mb-4">
+                Paternal grandfather died of lung cancer at age 72 (heavy smoker for 40+ years). Father deceased at age 81 from myocardial infarction, had history of hypertension and diabetes mellitus type 2, former smoker who quit at age 45. Mother living at age 89, has osteoporosis and mild cognitive impairment, never smoked.
               </p>
-              <ul className="text-sm font-monument text-gray-700 space-y-1 ml-4">
-                <li>• Continue current regimen, cycle 4 scheduled for 6/21/2025</li>
-                <li>• Monitor CBC prior to next cycle</li>
-                <li>• Consider growth factor support if ANC remains low</li>
-                <li>• Surveillance CT chest/abdomen/pelvis in 3 months post-completion</li>
-              </ul>
-            </div>
-
-            {/* Problem 2 */}
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">
-                2. Chemotherapy-related fatigue
-              </h3>
-              <p className="text-sm font-monument text-gray-700 mb-2">
-                Moderate fatigue impacting quality of life, likely multifactorial.
+              <p className="mb-4">
+                Maternal grandmother died of breast cancer at age 67, no known BRCA mutations in family. Two brothers: older brother age 70 with hypertension and hyperlipidemia, former smoker; younger brother age 64 with no known medical issues, never smoked. One sister age 61 with hypothyroidism and osteoarthritis.
               </p>
-              <ul className="text-sm font-monument text-gray-700 space-y-1 ml-4">
-                <li>• Continue iron supplementation for anemia</li>
-                <li>• Encourage light exercise as tolerated</li>
-                <li>• Sleep hygiene counseling provided</li>
-                <li>• Consider methylphenidate if fatigue persists post-chemotherapy</li>
-              </ul>
-            </div>
-
-            {/* Problem 3 */}
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">
-                3. Headaches - Likely tension-type, possibly related to stress/treatment
-              </h3>
-              <p className="text-sm font-monument text-gray-700 mb-2">
-                Increasing frequency concerning, but no red flag symptoms.
+              <p className="mb-4">
+                No known family history of other malignancies, genetic cancer syndromes, or significant hereditary conditions. Patient reports extensive smoking history in paternal family members including paternal uncle who died of emphysema at age 68.
               </p>
-              <ul className="text-sm font-monument text-gray-700 space-y-1 ml-4">
-                <li>• Trial of sumatriptan 50mg for acute episodes</li>
-                <li>• Headache diary to identify triggers</li>
-                <li>• Consider neurology referral if no improvement in 4 weeks</li>
-                <li>• MRI brain if pattern changes or neurologic symptoms develop</li>
-              </ul>
-            </div>
-
-            {/* Problem 4 */}
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">
-                4. Peripheral neuropathy, grade 1 - Paclitaxel-induced
-              </h3>
-              <p className="text-sm font-monument text-gray-700 mb-2">
-                Mild sensory neuropathy in fingertips, not interfering with function.
-              </p>
-              <ul className="text-sm font-monument text-gray-700 space-y-1 ml-4">
-                <li>• Continue current paclitaxel dose</li>
-                <li>• Monitor for progression</li>
-                <li>• Consider dose reduction if progresses to grade 2</li>
-                <li>• Gabapentin 300mg TID if symptoms worsen</li>
-              </ul>
-            </div>
-
-            {/* Problem 5 */}
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">
-                5. Hypertension - Suboptimal control
-              </h3>
-              <p className="text-sm font-monument text-gray-700 mb-2">
-                BP elevated today, may be related to stress or pain.
-              </p>
-              <ul className="text-sm font-monument text-gray-700 space-y-1 ml-4">
-                <li>• Increase amlodipine to 10mg daily</li>
-                <li>• Home BP monitoring</li>
-                <li>• Recheck in 2 weeks</li>
-                <li>• Consider ACE inhibitor if not controlled</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Current Medications */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Current Medications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="border-l-4 border-blue-500 bg-blue-50 p-3">
-              <p className="font-monument font-medium text-blue-800">Amlodipine 5mg daily</p>
-              <p className="text-sm font-monument text-blue-700">For hypertension</p>
-            </div>
-            <div className="border-l-4 border-green-500 bg-green-50 p-3">
-              <p className="font-monument font-medium text-green-800">Ferrous sulfate 325mg BID</p>
-              <p className="text-sm font-monument text-green-700">For iron deficiency anemia</p>
-            </div>
-            <div className="border-l-4 border-purple-500 bg-purple-50 p-3">
-              <p className="font-monument font-medium text-purple-800">Ondansetron 8mg q8h PRN</p>
-              <p className="text-sm font-monument text-purple-700">For nausea</p>
-            </div>
-            <div className="border-l-4 border-orange-500 bg-orange-50 p-3">
-              <p className="font-monument font-medium text-orange-800">Omeprazole 20mg daily</p>
-              <p className="text-sm font-monument text-orange-700">For GERD</p>
-            </div>
-            <div className="border-l-4 border-red-500 bg-red-50 p-3">
-              <p className="font-monument font-medium text-red-800">Carboplatin/Paclitaxel</p>
-              <p className="text-sm font-monument text-red-700">Adjuvant chemotherapy (cycle 3/4 complete)</p>
-            </div>
-            <div className="border-l-4 border-gray-500 bg-gray-50 p-3">
-              <p className="font-monument font-medium text-gray-800">Acetaminophen 650mg q6h PRN</p>
-              <p className="text-sm font-monument text-gray-700">For headaches</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Family History */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Family History
-          </h2>
-          <div className="space-y-2 text-base font-monument text-gray-700">
-            <p><strong>Father:</strong> Deceased at age 72 from lung cancer (30 pack-year smoking history)</p>
-            <p><strong>Mother:</strong> Age 78, alive, history of breast cancer at age 65, hypertension, diabetes</p>
-            <p><strong>Brother:</strong> Age 54, healthy, no known malignancies</p>
-            <p><strong>Sister:</strong> Age 52, history of cervical cancer, treated successfully</p>
-            <p><strong>Paternal grandfather:</strong> Deceased, lung cancer</p>
-            <p><strong>Maternal grandmother:</strong> Deceased, breast cancer</p>
-          </div>
-        </div>
-
-        {/* Social History */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Social History
-          </h2>
-          <div className="space-y-3">
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <h3 className="font-monument font-medium text-gray-800 mb-2">Tobacco Use</h3>
-              <p className="text-sm font-monument text-gray-700">
-                Former smoker, 25 pack-year history (1 PPD x 25 years). Quit 10 months ago upon diagnosis. 
-                Using nicotine replacement therapy successfully.
+              <p className="font-medium">
+                Relevant family history includes lung cancer (paternal grandfather) and breast cancer (maternal grandmother), with significant tobacco exposure in paternal lineage correlating with patient's own former tobacco use.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <h3 className="font-monument font-medium text-gray-800 mb-1">Occupation</h3>
-                <p className="text-sm font-monument text-gray-700">Construction foreman for 30 years, potential asbestos exposure in older buildings</p>
-              </div>
-              <div>
-                <h3 className="font-monument font-medium text-gray-800 mb-1">Alcohol</h3>
-                <p className="text-sm font-monument text-gray-700">Social drinker, 2-3 beers per week, no history of abuse</p>
-              </div>
-              <div>
-                <h3 className="font-monument font-medium text-gray-800 mb-1">Living Situation</h3>
-                <p className="text-sm font-monument text-gray-700">Lives with wife of 32 years, two adult children nearby, strong support system</p>
-              </div>
-              <div>
-                <h3 className="font-monument font-medium text-gray-800 mb-1">Exercise</h3>
-                <p className="text-sm font-monument text-gray-700">Previously active, now limited by fatigue. Walking 15-20 minutes daily as tolerated</p>
+          </div>
+
+          {/* Social History */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Social History
+            </h2>
+            <div className="font-monument text-base text-black leading-[22px] space-y-4">
+              <p>
+                <span className="font-medium">Tobacco:</span> Former smoker with 30 pack-year history (1 pack per day for 30 years). Quit smoking immediately upon diagnosis in February 2025. Previously attempted to quit multiple times over the past decade but was unsuccessful until cancer diagnosis provided strong motivation.
+              </p>
+              <p>
+                <span className="font-medium">Alcohol:</span> Social drinker, 2-3 beers per week, no history of alcohol abuse or dependence. Has reduced intake since starting chemotherapy due to decreased appetite and nausea concerns.
+              </p>
+              <p>
+                <span className="font-medium">Occupation:</span> Retired construction foreman as of 2020. Worked in construction for 35 years with potential asbestos exposure in older buildings during the 1980s and 1990s. Always used appropriate PPE when available, but acknowledges inconsistent use in earlier career.
+              </p>
+              <p>
+                <span className="font-medium">Living situation:</span> Lives with wife of 28 years in single-story home. Two adult children live nearby and provide strong support system. Wife accompanies patient to all appointments and assists with medication management.
+              </p>
+              <p>
+                <span className="font-medium">Exercise:</span> Previously active with regular walking and weekend hiking. Currently maintaining light activity as tolerated during treatment. Plans to return to more vigorous exercise after completion of chemotherapy.
+              </p>
+              <p>
+                <span className="font-medium">Diet:</span> Generally healthy diet with increased focus on nutrition since diagnosis. Working with nutritionist to maintain adequate protein intake during treatment. No significant dietary restrictions.
+              </p>
+            </div>
+          </div>
+
+          {/* Medications */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Current Medications
+            </h2>
+            <div className="font-monument text-base text-black leading-[22px]">
+              <div className="space-y-3">
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <p className="font-medium">Amlodipine 10mg PO daily</p>
+                  <p className="text-sm text-gray-600">For hypertension - increased from 5mg due to rising BP</p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-4">
+                  <p className="font-medium">Ondansetron 8mg PO q8h PRN</p>
+                  <p className="text-sm text-gray-600">For chemotherapy-induced nausea and vomiting</p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-4">
+                  <p className="font-medium">Prochlorperazine 10mg PO q6h PRN</p>
+                  <p className="text-sm text-gray-600">For breakthrough nausea</p>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <p className="font-medium">Ferrous sulfate 325mg PO BID</p>
+                  <p className="text-sm text-gray-600">For iron deficiency anemia</p>
+                </div>
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <p className="font-medium">Omeprazole 20mg PO daily</p>
+                  <p className="text-sm text-gray-600">For GI protection during treatment</p>
+                </div>
+                <div className="border-l-4 border-gray-500 pl-4">
+                  <p className="font-medium">Multivitamin 1 tablet PO daily</p>
+                  <p className="text-sm text-gray-600">Nutritional support</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Follow-up Plan */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-monument font-semibold text-black">
-            Follow-up Plan
-          </h2>
-          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-            <div className="space-y-3">
-              <div>
-                <h3 className="font-monument font-medium text-indigo-800 mb-1">Next Appointments</h3>
-                <ul className="text-sm font-monument text-indigo-700 space-y-1">
-                  <li>• Oncology follow-up: June 21, 2025 (Cycle 4 chemotherapy)</li>
-                  <li>• Lab draw: June 19, 2025 (Pre-chemo CBC/CMP)</li>
-                  <li>• Primary care: June 14, 2025 (BP recheck)</li>
+          {/* Follow-up Plan */}
+          <div className="space-y-6">
+            <h2 className="font-monument text-xl font-medium text-black">
+              Follow-up Plan
+            </h2>
+            <div className="font-monument text-base text-black leading-[22px] space-y-4">
+              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                <p className="font-medium text-blue-900 mb-2">Next Appointment:</p>
+                <p className="text-blue-800">May 27, 2025 at 10:00 AM - Cycle 2 of chemotherapy</p>
+                <p className="text-blue-800">Pre-treatment labs to be drawn May 26, 2025</p>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="font-medium">Monitoring Schedule:</h3>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>CBC with differential before each cycle</li>
+                  <li>Comprehensive metabolic panel before each cycle</li>
+                  <li>Neuropathy assessment at each visit</li>
+                  <li>Performance status evaluation</li>
+                  <li>Weight and nutritional assessment</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="font-monument font-medium text-indigo-800 mb-1">Monitoring</h3>
-                <ul className="text-sm font-monument text-indigo-700 space-y-1">
-                  <li>• Weekly CBC during treatment</li>
-                  <li>• Home blood pressure monitoring</li>
-                  <li>• Headache diary</li>
-                  <li>• Weight monitoring</li>
+
+              <div className="space-y-3">
+                <h3 className="font-medium">Patient Education Provided:</h3>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Signs and symptoms of infection to report immediately</li>
+                  <li>When to contact oncology team (fever >100.4°F, severe nausea/vomiting, numbness/tingling progression)</li>
+                  <li>Importance of maintaining adequate hydration and nutrition</li>
+                  <li>Activity recommendations and restrictions</li>
+                  <li>Medication compliance and side effect management</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="font-monument font-medium text-indigo-800 mb-1">Patient Education</h3>
-                <ul className="text-sm font-monument text-indigo-700 space-y-1">
-                  <li>• Signs/symptoms of infection to report</li>
-                  <li>• When to hold medications</li>
-                  <li>• Importance of medication compliance</li>
-                  <li>• Nutrition counseling resources provided</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-monument font-medium text-indigo-800 mb-1">Emergency Contact</h3>
-                <p className="text-sm font-monument text-indigo-700">
-                  24/7 oncology triage line: (555) 123-4567
-                </p>
+
+              <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                <p className="font-medium text-yellow-900 mb-2">Emergency Contact Instructions:</p>
+                <p className="text-yellow-800">Call oncology triage line at (555) 123-4567 for any concerning symptoms. After hours, call main hospital number and ask for oncology resident on call.</p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Provider Information */}
-        <div className="border-t border-gray-200 pt-4 mt-8">
-          <div className="text-sm font-monument text-gray-600 space-y-1">
-            <p><strong>Provider:</strong> Dr. Sarah Chen, MD - Medical Oncology</p>
-            <p><strong>Date/Time:</strong> June 7, 2025 at 12:10 PM</p>
-            <p><strong>Duration:</strong> 45 minutes</p>
-            <p><strong>Note Status:</strong> Signed and finalized</p>
           </div>
         </div>
       </div>
