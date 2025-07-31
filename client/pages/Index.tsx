@@ -42,8 +42,8 @@ export default function Index() {
               <PatientContent />
             </div>
 
-            {/* Transcript Sidebar - always visible for testing */}
-            <div className="flex-shrink-0">
+            {/* Transcript Sidebar - collapsed on right side */}
+            <div className="hidden lg:block flex-shrink-0">
               <TranscriptSidebar />
             </div>
           </div>
