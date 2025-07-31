@@ -42,8 +42,8 @@ export default function Index() {
               <PatientContent />
             </div>
 
-            {/* Transcript Sidebar - hidden on mobile, visible on desktop */}
-            <div className="hidden xl:block flex-shrink-0">
+            {/* Transcript Sidebar - always visible for testing */}
+            <div className="flex-shrink-0">
               <TranscriptSidebar />
             </div>
           </div>
