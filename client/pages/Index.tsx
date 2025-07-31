@@ -30,9 +30,12 @@ export default function Index() {
               <PatientContent />
             </div>
 
-            {/* Transcript Sidebar - collapsed on right side */}
+            {/* Transcript Sidebar - collapsible on right side */}
             <div className="hidden lg:block flex-shrink-0">
-              <TranscriptSidebar />
+              <TranscriptSidebar
+                collapsed={transcriptCollapsed}
+                onToggleCollapse={() => setTranscriptCollapsed(!transcriptCollapsed)}
+              />
             </div>
           </div>
         </MainLayout>
