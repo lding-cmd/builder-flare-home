@@ -90,7 +90,7 @@ export function TranscriptSidebar({ collapsed = true, onToggleCollapse }: Transc
           className="p-1 hover:bg-gray-100 rounded transition-colors"
           aria-label="Collapse transcript"
         >
-          <ChevronsLeft className="w-5 h-5 text-core-slate-900" />
+          <ChevronsLeft className="w-5 h-5 text-core-slate-900 transform rotate-180 transition-transform duration-300" />
         </button>
         <div className="flex items-center gap-2">
           <span className="font-monument text-base font-medium text-core-slate-900">
