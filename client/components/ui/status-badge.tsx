@@ -13,8 +13,9 @@ export function StatusBadge({ status, children }: StatusBadgeProps) {
         {
           "bg-extended-sienna-100 text-extended-sienna-700": status === "error",
           "bg-core-slate-100 text-core-slate-900": status === "complete",
-          "bg-extended-moss-100 text-extended-moss-700": status === "processing",
-        }
+          "bg-extended-moss-100 text-extended-moss-700":
+            status === "processing",
+        },
       )}
     >
       {children}

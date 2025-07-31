@@ -14,9 +14,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        'monument': ['ABC Monument Grotesk', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
-        'inter': ['Inter', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
-        'sf-pro': ['SF Pro', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        monument: [
+          "ABC Monument Grotesk",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
+        inter: ["Inter", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
+        "sf-pro": [
+          "SF Pro",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
       },
       colors: {
         // Original colors
@@ -64,25 +76,25 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Custom colors from design
-        'core-slate': {
-          0: '#F8FAFC',
-          50: '#EDF3F8',
-          100: '#DBE6F0',
-          700: '#4376A3',
-          900: '#375C7C',
+        "core-slate": {
+          0: "#F8FAFC",
+          50: "#EDF3F8",
+          100: "#DBE6F0",
+          700: "#4376A3",
+          900: "#375C7C",
         },
-        'neutral': {
-          white: '#FFF',
-          black: '#000',
-          'gray-700': '#4C4C4A',
-          'beige-50': '#F5F4F1',
-          'beige-100': '#E2E0D9',
+        neutral: {
+          white: "#FFF",
+          black: "#000",
+          "gray-700": "#4C4C4A",
+          "beige-50": "#F5F4F1",
+          "beige-100": "#E2E0D9",
         },
-        'extended': {
-          'sienna-100': '#F2E1DB',
-          'sienna-700': '#B65130',
-          'moss-100': '#DFEBCE',
-          'moss-700': '#52623B',
+        extended: {
+          "sienna-100": "#F2E1DB",
+          "sienna-700": "#B65130",
+          "moss-100": "#DFEBCE",
+          "moss-700": "#52623B",
         },
       },
       borderRadius: {

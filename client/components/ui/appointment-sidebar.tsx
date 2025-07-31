@@ -1,4 +1,9 @@
-import { Calendar, ChevronDown, ChevronsLeft, ChevronsRight } from "lucide-react";
+import {
+  Calendar,
+  ChevronDown,
+  ChevronsLeft,
+  ChevronsRight,
+} from "lucide-react";
 import { AppointmentCard } from "./appointment-card";
 
 interface AppointmentSidebarProps {
@@ -6,7 +11,10 @@ interface AppointmentSidebarProps {
   onToggleCollapse?: () => void;
 }
 
-export function AppointmentSidebar({ collapsed = false, onToggleCollapse }: AppointmentSidebarProps) {
+export function AppointmentSidebar({
+  collapsed = false,
+  onToggleCollapse,
+}: AppointmentSidebarProps) {
   const appointments = [
     {
       patientName: "Martinez, Roberto",

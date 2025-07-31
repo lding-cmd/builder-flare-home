@@ -18,54 +18,63 @@ const conversationData: ConversationMessage[] = [
     id: "1",
     speaker: "doctor",
     timestamp: "00:19",
-    message: "Good morning, Mr. Martinez. I'm Dr. Chen, the oncologist you've been referred to. It's nice to meet you.",
-    opacity: 0.5
+    message:
+      "Good morning, Mr. Martinez. I'm Dr. Chen, the oncologist you've been referred to. It's nice to meet you.",
+    opacity: 0.5,
   },
   {
     id: "2",
     speaker: "patient",
     timestamp: "00:22",
-    message: "Nice to meet you too, Doctor. I appreciate you seeing me."
+    message: "Nice to meet you too, Doctor. I appreciate you seeing me.",
   },
   {
     id: "3",
     speaker: "doctor",
     timestamp: "00:24",
-    message: "Of course. I see from your referral that you've been experiencing some concerning symptoms that your primary care physician wanted us to evaluate. Before we dive into that, could you tell me a bit about your general health and any ongoing medical conditions?"
+    message:
+      "Of course. I see from your referral that you've been experiencing some concerning symptoms that your primary care physician wanted us to evaluate. Before we dive into that, could you tell me a bit about your general health and any ongoing medical conditions?",
   },
   {
     id: "4",
     speaker: "patient",
     timestamp: "00:38",
-    message: "Well, I've had high blood pressure for about five years now. I take amlodipine for it, but my primary doctor said my numbers have been creeping up lately. I've also been having these bad headaches for the past few months, and I'm tired all the time. My doctor did some blood work and said I have anemia – something about low iron."
+    message:
+      "Well, I've had high blood pressure for about five years now. I take amlodipine for it, but my primary doctor said my numbers have been creeping up lately. I've also been having these bad headaches for the past few months, and I'm tired all the time. My doctor did some blood work and said I have anemia – something about low iron.",
   },
   {
     id: "5",
     speaker: "doctor",
     timestamp: "00:54",
-    message: "I see. And how often are you experiencing these headaches?"
+    message: "I see. And how often are you experiencing these headaches?",
   },
   {
     id: "6",
     speaker: "patient",
     timestamp: "00:58",
-    message: "About three or four times a week. Sometimes they're so bad I can't get out of bed."
+    message:
+      "About three or four times a week. Sometimes they're so bad I can't get out of bed.",
   },
   {
     id: "7",
     speaker: "doctor",
     timestamp: "01:00",
-    message: "I'm sorry to hear that. Are there any patterns you've noticed with the headaches? Anything that seems to trigger them?"
+    message:
+      "I'm sorry to hear that. Are there any patterns you've noticed with the headaches? Anything that seems to trigger them?",
   },
   {
     id: "8",
     speaker: "patient",
     timestamp: "01:09",
-    message: "I'm not really sure. Sometimes I notice it when I've done a lot of driving in the dark."
-  }
+    message:
+      "I'm not really sure. Sometimes I notice it when I've done a lot of driving in the dark.",
+  },
 ];
 
-export function TranscriptSidebar({ collapsed = true, onToggleCollapse }: TranscriptSidebarProps) {
+export function TranscriptSidebar({
+  collapsed = true,
+  onToggleCollapse,
+}: TranscriptSidebarProps) {
   if (collapsed) {
     return (
       <div className="w-[72px] h-full bg-core-slate-0 border-l border-core-slate-50 p-6 flex flex-col items-center gap-6">
@@ -105,12 +114,14 @@ export function TranscriptSidebar({ collapsed = true, onToggleCollapse }: Transc
         {conversationData.map((message) => (
           <div
             key={message.id}
-            className={`flex gap-4 py-2 ${message.opacity ? 'opacity-50' : ''}`}
+            className={`flex gap-4 py-2 ${message.opacity ? "opacity-50" : ""}`}
           >
             {/* Avatar */}
-            <div className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 ${
-              message.speaker === "doctor" ? "bg-[#BDC95B]" : "bg-[#9391B8]"
-            }`}>
+            <div
+              className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                message.speaker === "doctor" ? "bg-[#BDC95B]" : "bg-[#9391B8]"
+              }`}
+            >
               <User className="w-4 h-4 text-white" fill="white" />
             </div>
 

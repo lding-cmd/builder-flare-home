@@ -14,16 +14,16 @@ export default function Index() {
         <MainLayout>
           <div className="relative flex h-[calc(100vh-200px)] overflow-hidden">
             {/* Appointment Sidebar - collapsible */}
-            <div className={`flex-shrink-0 transition-all duration-300 ${
-              sidebarCollapsed ? 'w-[72px]' : 'w-80 lg:w-[360px]'
-            }`}>
+            <div
+              className={`flex-shrink-0 transition-all duration-300 ${
+                sidebarCollapsed ? "w-[72px]" : "w-80 lg:w-[360px]"
+              }`}
+            >
               <AppointmentSidebar
                 collapsed={sidebarCollapsed}
                 onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
               />
             </div>
-
-
 
             {/* Main Content - takes remaining space */}
             <div className="flex-1">
@@ -34,7 +34,9 @@ export default function Index() {
             <div className="hidden lg:block flex-shrink-0">
               <TranscriptSidebar
                 collapsed={transcriptCollapsed}
-                onToggleCollapse={() => setTranscriptCollapsed(!transcriptCollapsed)}
+                onToggleCollapse={() =>
+                  setTranscriptCollapsed(!transcriptCollapsed)
+                }
               />
             </div>
           </div>
