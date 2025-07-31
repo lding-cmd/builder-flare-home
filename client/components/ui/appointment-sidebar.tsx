@@ -1,4 +1,4 @@
-import { Calendar, ChevronDown, ChevronsLeft } from "lucide-react";
+import { Calendar, ChevronDown, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { AppointmentCard } from "./appointment-card";
 
 interface AppointmentSidebarProps {
