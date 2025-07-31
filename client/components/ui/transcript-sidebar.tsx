@@ -111,12 +111,12 @@ export function TranscriptSidebar({ collapsed = true, onToggleCollapse }: Transc
             <div className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 ${
               message.speaker === "doctor" ? "bg-[#BDC95B]" : "bg-[#9391B8]"
             }`}>
-              <User className="w-4 h-4 text-white" />
+              <User className="w-4 h-4 text-white" fill="white" />
             </div>
 
             {/* Message Content */}
             <div className="flex-1 space-y-1">
-              <div className="text-sm font-monument text-neutral-gray-500">
+              <div className="text-base font-monument text-[#737373]">
                 {message.timestamp}
               </div>
               <div className="text-base font-monument text-black leading-[22px]">
