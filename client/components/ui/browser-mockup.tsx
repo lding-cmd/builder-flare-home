@@ -13,20 +13,21 @@ export function BrowserMockup({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full bg-white rounded-t-lg shadow-sm">
       {/* Browser Controls */}
-      <div className="h-[42px] bg-[#DEE1E6] rounded-t-lg flex items-center px-3 justify-between">
+      <div className="h-[42px] bg-[#DEE1E6] rounded-t-lg flex items-center px-3">
         {/* Traffic Lights */}
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-[#FF6058] border border-[#E14942]"></div>
           <div className="w-3 h-3 rounded-full bg-[#FFC130] border border-[#E1A325]"></div>
           <div className="w-3 h-3 rounded-full bg-[#27CA40] border border-[#3EAF3F]"></div>
         </div>
+        
         {/* Tab */}
-        <div className="flex items-center">
-          <div className="bg-white rounded-t-lg px-2 sm:px-4 py-2 flex items-center gap-1 sm:gap-2 border-l border-r border-t border-gray-200">
+        <div className="flex items-center ml-4">
+          <div className="bg-white rounded-t-lg px-3 py-2 flex items-center gap-2 border-l border-r border-t border-gray-200 min-w-0">
             <svg
               width="16"
               height="10"
-              className="sm:w-5 sm:h-3"
+              className="w-4 h-2.5 flex-shrink-0"
               viewBox="0 0 20 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,20 +39,22 @@ export function BrowserMockup({ children }: { children: React.ReactNode }) {
                 strokeWidth="0.1"
               />
             </svg>
-            <span className="text-xs sm:text-sm font-sf-pro text-gray-700 hidden sm:inline">
+            <span className="text-sm font-sf-pro text-gray-700 truncate">
               DeepScribe
             </span>
-            <X className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" />
+            <X className="w-4 h-4 text-gray-500 flex-shrink-0" />
           </div>
-          <Plus className="w-5 h-5 text-gray-600 ml-2" />
+          <Plus className="w-5 h-5 text-gray-600 ml-2 flex-shrink-0" />
         </div>
-        <div className="w-12"></div> {/* Spacer for balance */}
+        
+        {/* Spacer to push content to the right */}
+        <div className="flex-1"></div>
       </div>
 
       {/* URL Bar */}
-      <div className="h-[38px] bg-white border-b border-gray-200 flex items-center px-3 shadow-[inset_0_-1px_0_0_#DADCE0]">
+      <div className="h-[38px] bg-white border-b border-gray-200 flex items-center px-3 gap-4 shadow-[inset_0_-1px_0_0_#DADCE0]">
         {/* Navigation Buttons */}
-        <div className="flex items-center gap-4 mr-4">
+        <div className="flex items-center gap-4 flex-shrink-0">
           <ArrowLeft className="w-4 h-4 text-gray-500" />
           <ArrowRight className="w-4 h-4 text-gray-300" />
           <RotateCcw className="w-4 h-4 text-gray-500" />
@@ -59,21 +62,21 @@ export function BrowserMockup({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* URL Input */}
-        <div className="flex-1 max-w-4xl mx-2 sm:mx-4">
-          <div className="bg-gray-100 rounded-full px-2 sm:px-3 py-1 flex items-center">
-            <Lock className="w-2 h-2 sm:w-3 sm:h-3 text-gray-500 mr-1 sm:mr-2" />
-            <span className="text-xs sm:text-sm font-sf-pro text-gray-800">
+        <div className="flex-1 min-w-0">
+          <div className="bg-gray-100 rounded-full px-3 py-1 flex items-center min-w-0">
+            <Lock className="w-3 h-3 text-gray-500 mr-2 flex-shrink-0" />
+            <span className="text-sm font-sf-pro text-gray-800 truncate">
               deepscribe.ai
             </span>
-            <span className="text-xs sm:text-sm font-sf-pro text-gray-500 hidden sm:inline">
+            <span className="text-sm font-sf-pro text-gray-500 hidden md:inline">
               /schedule
             </span>
-            <Star className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 ml-auto" />
+            <Star className="w-4 h-4 text-gray-500 ml-auto flex-shrink-0" />
           </div>
         </div>
 
         {/* Profile */}
-        <div className="w-6 h-6 rounded-full bg-gray-400 ml-4"></div>
+        <div className="w-6 h-6 rounded-full bg-gray-400 flex-shrink-0"></div>
       </div>
 
       {/* Content */}
