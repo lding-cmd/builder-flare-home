@@ -95,8 +95,12 @@ export function AppointmentSidebar({ collapsed = false, onToggleCollapse }: Appo
     },
   ];
 
+  if (collapsed) {
+    return null;
+  }
+
   return (
-    <div className="w-full xl:w-[360px] h-full bg-core-slate-0 xl:border-r border-core-slate-50 p-4 xl:p-6 space-y-4 xl:space-y-6 overflow-y-auto">
+    <div className="w-full h-full bg-core-slate-0 xl:border-r border-core-slate-50 p-4 xl:p-6 space-y-4 xl:space-y-6 overflow-y-auto">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
