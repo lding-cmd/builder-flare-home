@@ -12,9 +12,14 @@ export default function Index() {
       <BrowserMockup>
         <MainLayout>
           <div className="flex h-[calc(100vh-200px)] overflow-hidden">
-            {/* Appointment Sidebar - always visible, responsive width */}
-            <div className="w-80 lg:w-[360px] flex-shrink-0">
-              <AppointmentSidebar />
+            {/* Appointment Sidebar - collapsible */}
+            <div className={`flex-shrink-0 transition-all duration-300 ${
+              sidebarCollapsed ? 'w-0' : 'w-80 lg:w-[360px]'
+            }`}>
+              <AppointmentSidebar
+                collapsed={sidebarCollapsed}
+                onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+              />
             </div>
 
             {/* Main Content - takes remaining space */}
