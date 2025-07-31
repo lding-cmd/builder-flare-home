@@ -108,7 +108,13 @@ export function AppointmentSidebar({ collapsed = false, onToggleCollapse }: Appo
             <ChevronDown className="w-4 h-4 text-core-slate-900" />
           </div>
         </div>
-        <ChevronsLeft className="w-5 h-5 text-core-slate-900" />
+        <button
+          onClick={onToggleCollapse}
+          className="p-1 hover:bg-gray-100 rounded transition-colors"
+          aria-label="Toggle sidebar"
+        >
+          <ChevronsLeft className="w-5 h-5 text-core-slate-900" />
+        </button>
       </div>
 
       {/* Appointments List */}
