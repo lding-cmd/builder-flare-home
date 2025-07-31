@@ -11,7 +11,7 @@ export default function Index() {
     <div className="min-h-screen bg-gray-100 p-2 lg:p-4">
       <BrowserMockup>
         <MainLayout>
-          <div className="flex h-[calc(100vh-200px)] overflow-hidden">
+          <div className="relative flex h-[calc(100vh-200px)] overflow-hidden">
             {/* Appointment Sidebar - collapsible */}
             <div className={`flex-shrink-0 transition-all duration-300 ${
               sidebarCollapsed ? 'w-0' : 'w-80 lg:w-[360px]'
